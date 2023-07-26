@@ -1,0 +1,9 @@
+[runner]
+fastReruns = true
+
+[server]
+headless = true
+
+[theme]
+base="dark"
+font="sans serif"
