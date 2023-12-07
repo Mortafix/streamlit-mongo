@@ -1,11 +1,11 @@
 from typing import Dict, List, Union
 
 from pymongo import MongoClient
-from streamlit.connections import ExperimentalBaseConnection
+from streamlit.connections import BaseConnection
 from streamlit.runtime.caching import cache_data
 
 
-class MongoDBConnection(ExperimentalBaseConnection[MongoClient]):
+class MongoDBConnection(BaseConnection[MongoClient]):
     def _connect(self, **kwargs) -> MongoClient:
         db = kwargs.pop("database", None) or self._secrets.get("database")
         coll = kwargs.pop("collection", None) or self._secrets.get("collection")

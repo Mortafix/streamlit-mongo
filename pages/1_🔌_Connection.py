@@ -5,17 +5,15 @@ from connection.mongo import MongoDBConnection
 def app():
     st.title("🔌 MongoDB Connection")
     st.info(
-        "This component use the last **pymongo** version available (July 2023)",
+        "This component use the last **pymongo** version available (_December 2023_)",
         icon="ℹ️",
     )
     st.write(
-        "**First step**: create a _connection_ using `st.experimental_connection` "
+        "**First step**: create a _connection_ using `st.connection` "
         "and `MongoDBConnection` component"
     )
-    connection = st.experimental_connection("mongodb", type=MongoDBConnection)
-    st.code(
-        """connection = st.experimental_connection("mongodb", type=MongoDBConnection)"""
-    )
+    connection = st.connection("mongodb", type=MongoDBConnection)
+    st.code("""connection = st.connection("mongodb", type=MongoDBConnection)""")
 
     tabs = st.tabs(
         ["Connection 🔌", "Find 🔎", "Insert ✅", "Update ⚡️", "Delete ❌", "Extra 🪄"]

@@ -5,7 +5,7 @@ from re import sub
 import streamlit as st
 from connection.mongo import MongoDBConnection
 
-DB = st.experimental_connection("streamy", type=MongoDBConnection)
+DB = st.connection("streamy", type=MongoDBConnection)
 
 # ---- utils
 

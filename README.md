@@ -3,7 +3,7 @@
 # Streamlit MongoDB Connector
 
 This repository contains the source code for a MongoDB connector developed for the [Streamlit Connections Hackathon](https://discuss.streamlit.io/t/connections-hackathon).  
-The goal of this project is to showcase how to leverage the power of Streamlit's new `st.experimental_connection` feature to connect Streamlit applications with MongoDB databases, and use this connection in practical applications.
+The goal of this project is to showcase how to leverage the power of Streamlit's new `st.connection` feature to connect Streamlit applications with MongoDB databases, and use this connection in practical applications.
 
 ## Overview
 
@@ -11,7 +11,7 @@ The application is divided into three main sections:
 
 1. **Connection Demonstration**: Shows how the connection to MongoDB has been implemented, demonstrating how data can be retrieved and manipulated.
 
-2. **MongoDB Configuration**: Demonstrates how to configure the MongoDB connection, explaining how to set it up via the `secrets.toml` file or directly through the `st.experimental_connection` call.
+2. **MongoDB Configuration**: Demonstrates how to configure the MongoDB connection, explaining how to set it up via the `secrets.toml` file or directly through the `st.connection` call.
 
 3. **StreamY**: A prototype for a simple text-based social network, where users can post texts on a wall. This showcases the MongoDB connection's use in a practical application, as it's used to store and retrieve posts.
 

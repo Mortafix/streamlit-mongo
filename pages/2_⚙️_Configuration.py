@@ -5,7 +5,7 @@ def app():
     st.title("⚙️ MongoDB Configuration")
     st.write(
         "_MongoDB_ configuration can be specified in the `secrets.toml` file or "
-        "directly in the `st.experimental_connection` call."
+        "directly in the `st.connection` call."
     )
 
     st.subheader("Using `secrets.toml`")
@@ -30,14 +30,14 @@ def app():
         """
     )
 
-    st.subheader("Using `st.experimental_connection`")
+    st.subheader("Using `st.connection`")
     st.write(
         "Alternatively, you can specify the database, collection and connection options"
-        " directly in the `st.experimental_connection` call."
+        " directly in the `st.connection` call."
     )
     st.code(
         """
-        conn = st.experimental_connect(
+        conn = st.connection(
             "mongodb",
             url="mongodb+srv://<username>:<password>@<cluster-name>.<cluster-id>.mongodb.net",
             database="streamlit",

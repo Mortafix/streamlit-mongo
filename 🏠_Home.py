@@ -14,7 +14,7 @@ def main():
     )
     st.write(
         "The goal is to showcase a new _MongoDB_ connection using the "
-        "recently released `st.experimental_connection` feature of **Streamlit**."
+        "recently released `st.connection` feature of **Streamlit**."
     )
     st.write("The application is divided into 3 main pages:")
     st.write(
@@ -64,7 +64,7 @@ def main():
     df = pd.DataFrame(
         {
             "name": ["Streamlit", "MongoDB", "Python3"],
-            "version": ["1.25.0", "6.0", "3.10.9"],
+            "version": ["1.29.0", "6.0", "3.10.13"],
             "url": [
                 "https://streamlit.io",
                 "https://mongodb.com",
