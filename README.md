@@ -5,6 +5,8 @@
 This repository contains the source code for a MongoDB connector developed for the [Streamlit Connections Hackathon](https://discuss.streamlit.io/t/connections-hackathon).  
 The goal of this project is to showcase how to leverage the power of Streamlit's new `st.connection` feature to connect Streamlit applications with MongoDB databases, and use this connection in practical applications.
 
+[<img src="media/app.png" >](https://mongo-connector.streamlit.app/)
+
 ## Overview
 
 The application is divided into three main sections:
