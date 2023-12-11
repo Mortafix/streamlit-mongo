@@ -1,11 +1,30 @@
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_red.svg)](https://mongo-connector.streamlit.app)
+[![PyPI](https://img.shields.io/pypi/v/st-mongo-connection?color=green)](https://pypi.org/project/st-mongo-connection/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![GitHub](https://img.shields.io/github/license/mortafix/streamlit-mongo)
 
 # Streamlit MongoDB Connector
 
 This repository contains the source code for a MongoDB connector developed for the [Streamlit Connections Hackathon](https://discuss.streamlit.io/t/connections-hackathon).  
 The goal of this project is to showcase how to leverage the power of Streamlit's new `st.connection` feature to connect Streamlit applications with MongoDB databases, and use this connection in practical applications.
 
-[<img src="media/app.png" >](https://mongo-connector.streamlit.app/)
+[<img src="src/media/app.png" >](https://mongo-connector.streamlit.app/)
+
+## Installation & Usage
+
+The package can be installed via [PyPi](https://pypi.org/project/st-mongo-connection/).
+```bash
+pip3 install st_mongo_connection
+```
+and the following is a simple example to use it
+```python
+import streamlit as st
+from st_mongo_connection import MongoDBConnection
+
+connection = st.connection("mongodb", type=MongoDBConnection)
+st.help(connection)
+```
+If you want a real example and a detailed implemetation check out the [streamlit app](https://mongo-connector.streamlit.app).
 
 ## Overview
 
