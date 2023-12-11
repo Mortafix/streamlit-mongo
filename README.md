@@ -23,6 +23,13 @@ from st_mongo_connection import MongoDBConnection
 connection = st.connection("mongodb", type=MongoDBConnection)
 st.help(connection)
 ```
+```toml
+# secrets.toml
+[connections.mongodb]
+url="mongodb+srv://<username>:<password>@<cluster-name>.<cluster-id>.mongodb.net"
+database="database-name"
+collection="collection-name"
+```
 If you want a real example and a detailed implemetation check out the [streamlit app](https://mongo-connector.streamlit.app).
 
 ## Overview
