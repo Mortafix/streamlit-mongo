@@ -16,7 +16,7 @@ skip-excluded-dirs = true
 
 [project]
 name = "st-mongo-connection"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
   "streamlit>=1.29.0",
   "pymongo>=4.6.0",
