@@ -1,7 +1,6 @@
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_red.svg)](https://mongo-connector.streamlit.app)
 [![PyPI](https://img.shields.io/pypi/v/st-mongo-connection?color=green)](https://pypi.org/project/st-mongo-connection/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-![GitHub](https://img.shields.io/github/license/mortafix/streamlit-mongo)
 
 # Streamlit MongoDB Connector
 
