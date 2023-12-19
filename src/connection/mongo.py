@@ -28,14 +28,14 @@ class MongoDBConnection(BaseConnection[MongoClient]):
         If 'mongo_id' is False, the Mongo ID will be excluded from the results."""
 
         @cache_data(ttl=ttl)
-        def _find(filters: dict, **kwargs):
+        def _find(filters: dict, one: bool, **kwargs):
             mongo_id_proj = {"_id": 0} if not mongo_id else {}
             kwargs["projection"] = kwargs.get("projection", {}) | mongo_id_proj
             if one:
                 return self._instance.find_one(filters or {}, **kwargs)
             return list(self._instance.find(filters or {}, **kwargs))
 
-        return _find(filters, **kwargs)
+        return _find(filters, one, **kwargs)
 
     def find_one(
         self, filters: dict = None, mongo_id: bool = False, ttl: int = 3600, **kwargs
@@ -75,7 +75,7 @@ class MongoDBConnection(BaseConnection[MongoClient]):
         document will be updated."""
 
         @cache_data(ttl=ttl)
-        def _update(filters: Dict, data: Dict, **kwargs):
+        def _update(filters: Dict, data: Dict, one: bool, **kwargs):
             response = (
                 self._instance.update_one(filters, data, **kwargs)
                 if one
@@ -87,7 +87,7 @@ class MongoDBConnection(BaseConnection[MongoClient]):
                 "upserted_id": response.upserted_id,
             }
 
-        return _update(filters, data, **kwargs)
+        return _update(filters, data, one, **kwargs)
 
     def update_one(self, filters: Dict, data: Dict, ttl: int = 0, **kwargs) -> Dict:
         """Update a single document in the MongoDB collection that matches the provided
@@ -101,7 +101,7 @@ class MongoDBConnection(BaseConnection[MongoClient]):
         If 'one' is True, only the first matching document will be deleted."""
 
         @cache_data(ttl=ttl)
-        def _delete(filters: Dict, **kwargs):
+        def _delete(filters: Dict, one: bool, **kwargs):
             response = (
                 self._instance.delete_one(filters, **kwargs)
                 if one
@@ -109,7 +109,7 @@ class MongoDBConnection(BaseConnection[MongoClient]):
             )
             return {"deleted_count": response.deleted_count}
 
-        return _delete(filters, **kwargs)
+        return _delete(filters, one, **kwargs)
 
     def delete_one(self, filters: Dict, ttl: int = 0, **kwargs) -> Dict:
         """Delete a single document in the MongoDB collection that matches the
